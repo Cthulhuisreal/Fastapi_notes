@@ -8,7 +8,6 @@ import motor.motor_asyncio
 from datetime import datetime
 
 # Подключение к БД
-# 123
 app = FastAPI()
 client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://localhost:27017")
 db = client.notes
