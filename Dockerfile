@@ -1,4 +1,4 @@
-FROM tiangolo/uvicorn-gunicorn:python3.9
+FROM python:3.7
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED=1
@@ -9,4 +9,4 @@ COPY requirements.txt /code/
 
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY . /code
