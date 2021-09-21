@@ -144,7 +144,7 @@ async def remove_note(id: str, note: UpdateNoteModel = Body(...)):
 
 
 # Перенести заметку из корзины
-@app.put("/from_trash/{id}", response_description="Move a note from trash", response_model=NoteModel)
+@app.put("/from_trash/{id}", response_description="Перенести заметку из корзины", response_model=NoteModel)
 async def move_note(id: str, note: UpdateNoteModel = Body(...)):
     note = {k: v for k, v in note.dict().items()}
     if not note["in_trash"]:
@@ -157,7 +157,7 @@ async def move_note(id: str, note: UpdateNoteModel = Body(...)):
 
 
 # Удалить заметку
-@app.delete("/{id}", response_description="Delete a note")
+@app.delete("/{id}", response_description="Удалить заметку")
 async def delete_note(id: str):
     delete_result = await db["notes"].delete_one({"_id": id})
     if delete_result.deleted_count == 1:
