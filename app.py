@@ -9,7 +9,7 @@ from datetime import datetime
 
 # Подключение к БД
 app = FastAPI()
-client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://localhost:27017")
+client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://db:27017")
 db = client.notes
 
 
