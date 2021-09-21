@@ -34,7 +34,7 @@ class PyObjectId(ObjectId):
 # Модель заметки
 class NoteModel(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-    created: Optional[datetime] = datetime.utcnow()
+    created: datetime = datetime.utcnow()
     updated: Optional[datetime] = None
     text: str = Field(...)
     author: str = Field(...)
